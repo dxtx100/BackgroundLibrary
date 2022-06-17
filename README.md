@@ -415,7 +415,7 @@ style中不要加入"app:", 直接写属性名即可
 配置Live Templates步骤:  
  studio导入设置
 
- ![image-20220617172142991](images\image-20220617172142991.png)
+ ![](images/image-20220617172142991.png)
 
 
 
@@ -424,15 +424,11 @@ style中不要加入"app:", 直接写属性名即可
 然后重启as即可。
 
 效果：  
-![](images\111.jpg)  
+![](images/111.jpg)  
 
 目前不需要bl_开头，用solid,stroke,textColor等关键字开始,自动补全
 
 如果有什么问题，方便大家交流，创建了一个qq群，群号887686934，欢迎大家加入  
-
-![](https://user-gold-cdn.xitu.io/2018/11/22/1673a789b58ca9a6?w=10&h=10&f=png&s=94884)
-
-11、bl_position 
 
 
 ​    
