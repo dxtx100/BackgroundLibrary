@@ -83,9 +83,9 @@
         android:textColor="@android:color/white"
         android:textSize="20sp"
         app:bl_corners_radius="20dp"
-        app:bl_pressed_color="#7CCD7C"
+        app:bl_solid_color_pressed="#7CCD7C"
         app:bl_shape="rectangle"
-        app:bl_unpressed_color="#7CFC00" />
+        app:bl_solid_color="#7CFC00" />
 
     <View
         android:layout_width="50dp"
@@ -112,7 +112,6 @@
         android:textSize="20sp"
         app:bl_corners_radius="20dp"
         app:bl_ripple_color="#71C671"
-        app:bl_ripple_enable="true"
         app:bl_solid_color="#7CFC00"
         app:bl_stroke_color="#8c6822"
         app:bl_stroke_width="2dp" />
@@ -125,7 +124,6 @@
         android:orientation="vertical"
         app:bl_corners_radius="20dp"
         app:bl_ripple_color="#71C671"
-        app:bl_ripple_enable="true"
         app:bl_solid_color="#7CFC00"
         app:bl_stroke_color="#8c6822"
         app:bl_stroke_width="2dp">

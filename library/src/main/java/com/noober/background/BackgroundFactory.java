@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
@@ -36,7 +37,9 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
 
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
-        name = switchBLViewToOriginal(name);
+        //转换BLView为普通的,不适应与dataBinding等
+        if(Config.switchBlToOriginal)name = switchBLViewToOriginal(name);
+
         View view = null;
         if (mViewCreateFactory2 != null) {
             view = mViewCreateFactory2.onCreateView(name, context, attrs);
@@ -46,9 +49,22 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
         } else if (mViewCreateFactory != null) {
             view = mViewCreateFactory.onCreateView(name, context, attrs);
         }
-        return setViewBackground(name, context, attrs, view);
+
+        view = setViewBackground(name, context, attrs, view);
+
+        //支持拦截器功能
+        if (Config.onCreateViewInterceptor != null && view != null) {
+            Config.onCreateViewInterceptor.invoke(view, attrs);
+        }
+
+        return view;
     }
 
+    /**
+     * 不推荐转换
+     * @param name
+     * @return
+     */
     private String switchBLViewToOriginal(String name) {
         if(name.equals(Const.BLButton)){
             name = "Button";
@@ -58,26 +74,26 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
             name = "EditText";
         }else if(name.equals(Const.BLFrameLayout)){
             name = "FrameLayout";
-        }else if(name.equals(Const.BLGridLayout)){
-            name = "GridLayout";
-        }else if(name.equals(Const.BLGridView)){
-            name = "GridView";
-        }else if(name.equals(Const.BLImageButton)){
-            name = "ImageButton";
+//        }else if(name.equals(Const.BLGridLayout)){
+//            name = "GridLayout";
+//        }else if(name.equals(Const.BLGridView)){
+//            name = "GridView";
+//        }else if(name.equals(Const.BLImageButton)){
+//            name = "ImageButton";
         }else if(name.equals(Const.BLImageView)){
             name = "ImageView";
         }else if(name.equals(Const.BLLinearLayout)){
             name = "LinearLayout";
-        }else if(name.equals(Const.BLListView)){
-            name = "ListView";
+//        }else if(name.equals(Const.BLListView)){
+//            name = "ListView";
         }else if(name.equals(Const.BLRadioButton)){
             name = "RadioButton";
-        }else if(name.equals(Const.BLRadioGroup)){
-            name = "RadioGroup";
+//        }else if(name.equals(Const.BLRadioGroup)){
+//            name = "RadioGroup";
         }else if(name.equals(Const.BLRelativeLayout)){
             name = "RelativeLayout";
-        }else if(name.equals(Const.BLScrollView)){
-            name = "ScrollView";
+//        }else if(name.equals(Const.BLScrollView)){
+//            name = "ScrollView";
         }else if(name.equals(Const.BLTextView)){
             name = "TextView";
         }else if(name.equals(Const.BLView)){
@@ -94,14 +110,20 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
     @Nullable
     private static View setViewBackground(String name, Context context, AttributeSet attrs, View view) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.background);
-        TypedArray pressTa = context.obtainStyledAttributes(attrs, R.styleable.background_press);
-        TypedArray selectorTa = context.obtainStyledAttributes(attrs, R.styleable.background_selector);
         TypedArray textTa = context.obtainStyledAttributes(attrs, R.styleable.text_selector);
+
+        //pressed 以下不重要
+        TypedArray selectorTa = context.obtainStyledAttributes(attrs, R.styleable.background_selector);
         TypedArray buttonTa = context.obtainStyledAttributes(attrs, R.styleable.background_button_drawable);
         TypedArray otherTa = context.obtainStyledAttributes(attrs, R.styleable.bl_other);
+
+//        TypedArray background = context.obtainStyledAttributes(attrs, new int[]{android.R.attr.background});
+
+        Shape shape = new Shape(typedArray);
+
         try {
-            if (typedArray.getIndexCount() == 0 && selectorTa.getIndexCount() == 0
-                    && pressTa.getIndexCount() == 0 && textTa.getIndexCount() == 0 && buttonTa.getIndexCount() == 0) {
+            if (!shape.hasColor() && !shape.hasCorner() && selectorTa.getIndexCount() == 0
+                    && textTa.getIndexCount() == 0 && buttonTa.getIndexCount() == 0) {
                 return view;
             }
             if (view == null) {
@@ -120,36 +142,38 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
                 stateListDrawable = DrawableFactory.getSelectorDrawable(typedArray, selectorTa);
                 view.setClickable(true);
                 setDrawable(stateListDrawable, view, otherTa);
-            } else if (pressTa.getIndexCount() > 0) {
-                drawable = DrawableFactory.getDrawable(typedArray);
-                stateListDrawable = DrawableFactory.getPressDrawable(drawable, typedArray, pressTa);
-                view.setClickable(true);
-                setDrawable(stateListDrawable, view, otherTa);
-            } else if(typedArray.getIndexCount() > 0){
-                drawable = DrawableFactory.getDrawable(typedArray);
+            } else if(shape.hasColor()){
+                drawable = DrawableFactory.getDrawable(shape);
                 setDrawable(drawable, view, otherTa);
             }
 
             if (view instanceof TextView && textTa.getIndexCount() > 0) {
-                ((TextView) view).setTextColor(DrawableFactory.getTextSelectorColor(textTa));
+                //取默认颜色混合state
+                TypedArray ta = context.obtainStyledAttributes(attrs, new int[]{android.R.attr.textColor});
+                int color = ta.getColor(0, 0);
+                ta.recycle();
+                ((TextView) view).setTextColor(DrawableFactory.getTextSelectorColor(textTa, color));
             }
 
-            if (typedArray.getBoolean(R.styleable.background_bl_ripple_enable, false) &&
-                    typedArray.hasValue(R.styleable.background_bl_ripple_color)) {
-                int color = typedArray.getColor(R.styleable.background_bl_ripple_color, 0);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    Drawable contentDrawable = (stateListDrawable == null ? drawable : stateListDrawable);
-                    RippleDrawable rippleDrawable = new RippleDrawable(ColorStateList.valueOf(color), contentDrawable, contentDrawable);
-                    view.setClickable(true);
-                    view.setBackground(rippleDrawable);
-                } else if(stateListDrawable == null){
-                    StateListDrawable tmpDrawable = new StateListDrawable();
-                    GradientDrawable unPressDrawable = DrawableFactory.getDrawable(typedArray);
-                    unPressDrawable.setColor(color);
-                    tmpDrawable.addState(new int[]{-android.R.attr.state_pressed}, drawable);
-                    tmpDrawable.addState(new int[]{android.R.attr.state_pressed}, unPressDrawable);
-                    view.setClickable(true);
-                    setDrawable(tmpDrawable, view, otherTa);
+            //水波纹
+            if (typedArray.hasValue(R.styleable.background_bl_ripple_color) || Config.globalRippleEnable) {
+                int color = typedArray.getColor(R.styleable.background_bl_ripple_color, Config.defaultRippleColor);
+                Drawable contentDrawable = (stateListDrawable == null ? drawable : stateListDrawable);
+                if (contentDrawable == null) {
+                    TypedArray background = context.obtainStyledAttributes(attrs, new int[]{android.R.attr.background});
+                    contentDrawable = background.getDrawable(0);
+                }
+                RippleDrawable rippleDrawable = new RippleDrawable(ColorStateList.valueOf(color), contentDrawable, contentDrawable);
+                view.setClickable(true);
+                view.setBackground(rippleDrawable);
+            }
+
+            //是否裁剪,按背景裁剪,裁剪为圆形等
+            if(otherTa.hasValue(R.styleable.bl_other_bl_isClip)){
+                boolean isClip = otherTa.getBoolean(R.styleable.bl_other_bl_isClip, false);
+                if (isClip) {
+                    view.setOutlineProvider(shape.getOutlineProvider());
+                    view.setClipToOutline(true);
                 }
             }
             return view;
@@ -158,7 +182,6 @@ public class BackgroundFactory implements LayoutInflater.Factory2 {
             return view;
         } finally {
             typedArray.recycle();
-            pressTa.recycle();
             selectorTa.recycle();
             textTa.recycle();
             buttonTa.recycle();

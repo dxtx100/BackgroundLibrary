@@ -1,392 +1,293 @@
-<templateSet group="BackgroundLibrary">
-  <template name="bl_shape" value="bl_shape&#10;" description="shape类型" toReformat="false" toShortenFQNames="true">
+<templateSet group="background">
+  <template name="shape" value="app:bl_shape=&quot;$END$&quot;" description="shape类型" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_solid_color" value="bl_solid_color" description="填充颜色" toReformat="true" toShortenFQNames="true">
+  <template name="isClip" value="app:bl_isClip=&quot;$END$&quot;" description="裁剪" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_corners_radius" value="bl_corners_radius" description="圆角宽度" toReformat="false" toShortenFQNames="true">
+  <template name="solid_color" value="app:bl_solid_color=&quot;$END$&quot;" description="填充颜色" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_corners_bottomLeftRadius" value="bl_corners_bottomLeftRadius" description="左下圆角宽度" toReformat="false" toShortenFQNames="true">
+  <template name="corners_radius" value="app:bl_corners_radius=&quot;$END$&quot;" description="圆角宽度" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_corners_bottomRightRadius" value="bl_corners_bottomRightRadius" description="右下圆角宽度" toReformat="false" toShortenFQNames="true">
+  <template name="corners_bottomLeftRadius" value="app:bl_corners_bottomLeftRadius=&quot;$END$&quot;" description="左下圆角宽度" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_corners_topRightRadius" value="bl_corners_topRightRadius" description="右上圆角宽度" toReformat="true" toShortenFQNames="true">
+  <template name="corners_bottomRightRadius" value="app:bl_corners_bottomRightRadius=&quot;$END$&quot;" description="右下圆角宽度" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_corners_topLeftRadius" value="bl_corners_topLeftRadius" description="左上圆角宽度" toReformat="false" toShortenFQNames="true">
+  <template name="corners_topRightRadius" value="app:bl_corners_topRightRadius=&quot;$END$&quot;" description="右上圆角宽度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_angle" value="bl_gradient_angle" description="渐变角度" toReformat="true" toShortenFQNames="true">
+  <template name="corners_topLeftRadius" value="app:bl_corners_topLeftRadius=&quot;$END$&quot;" description="左上圆角宽度" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_centerX" value="bl_gradient_centerX" description="渐变中心X" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_angle" value="app:bl_gradient_angle=&quot;$END$&quot;" description="渐变角度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_centerY" value="bl_gradient_centerY" description="渐变中心Y" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_centerX" value="app:bl_gradient_centerX=&quot;$END$&quot;" description="渐变中心X" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_centerColor" value="bl_gradient_centerColor" description="渐变中心颜色" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_centerY" value="app:bl_gradient_centerY=&quot;$END$&quot;" description="渐变中心Y" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_endColor" value="bl_gradient_endColor" description="渐变结束颜色" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_centerColor" value="app:bl_gradient_centerColor=&quot;$END$&quot;" description="渐变中心颜色" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_startColor" value="bl_gradient_startColor" description="渐变开始颜色" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_endColor" value="app:bl_gradient_endColor=&quot;$END$&quot;" description="渐变结束颜色" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_gradientRadius" value="bl_gradient_gradientRadius" description="渐变角度" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_startColor" value="app:bl_gradient_startColor=&quot;$END$&quot;" description="渐变开始颜色" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_type" value="bl_gradient_type" description="渐变类型" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_gradientRadius" value="app:bl_gradient_gradientRadius=&quot;$END$&quot;" description="渐变角度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_gradient_useLevel" value="bl_gradient_useLevel" description="useLevel" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_type" value="app:bl_gradient_type=&quot;$END$&quot;" description="渐变类型" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_size_width" value="bl_size_width" description="宽度" toReformat="true" toShortenFQNames="true">
+  <template name="gradient_useLevel" value="app:bl_gradient_useLevel=&quot;$END$&quot;" description="useLevel" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_stroke_width" value="bl_stroke_width" description="边框高度" toReformat="true" toShortenFQNames="true">
+  <template name="size_width" value="app:bl_size_width=&quot;$END$&quot;" description="宽度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_stroke_color" value="bl_stroke_color" description="边框颜色" toReformat="true" toShortenFQNames="true">
+  <template name="stroke_width" value="app:bl_stroke_width=&quot;$END$&quot;" description="边框高度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_stroke_dashWidth" value="bl_stroke_dashWidth" description="边框间隔宽度" toReformat="true" toShortenFQNames="true">
+  <template name="stroke_color" value="app:bl_stroke_color=&quot;$END$&quot;" description="边框颜色" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_stroke_dashGap" value="bl_stroke_dashGap" description="stroke_dashGap" toReformat="true" toShortenFQNames="true">
+  <template name="stroke_dashWidth" value="app:bl_stroke_dashWidth=&quot;$END$&quot;" description="边框间隔宽度" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checkable_drawable" value="bl_checkable_drawable" description="checkable_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="stroke_dashGap" value="app:bl_stroke_dashGap=&quot;$END$&quot;" description="stroke_dashGap" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checked_drawable" value="bl_checked_drawable" description="checked_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="checkable_drawable" value="app:bl_checkable_drawable=&quot;$END$&quot;" description="checkable_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_enabled_drawable" value="bl_enabled_drawable" description="enabled_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="checked_drawable" value="app:bl_checked_drawable=&quot;$END$&quot;" description="checked_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_selected_drawable" value="bl_selected_drawable" description="selected_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="enabled_drawable" value="app:bl_enabled_drawable=&quot;$END$&quot;" description="enabled_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_pressed_drawable" value="bl_pressed_drawable" description="pressed_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="selected_drawable" value="app:bl_selected_drawable=&quot;$END$&quot;" description="selected_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_focused_drawable" value="bl_focused_drawable" description="focused_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="pressed_drawable" value="app:bl_pressed_drawable=&quot;$END$&quot;" description="pressed_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_focused_hovered" value="bl_focused_hovered" description="focused_hovered" toReformat="true" toShortenFQNames="true">
+  <template name="focused_drawable" value="app:bl_focused_drawable=&quot;$END$&quot;" description="focused_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_focused_activated" value="bl_focused_activated" description="focused_activated" toReformat="true" toShortenFQNames="true">
+  <template name="focused_hovered" value="app:bl_focused_hovered=&quot;$END$&quot;" description="focused_hovered" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unCheckable_drawable" value="bl_unCheckable_drawable" description="unCheckable_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="focused_activated" value="app:bl_focused_activated=&quot;$END$&quot;" description="focused_activated" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unChecked_drawable" value="bl_unChecked_drawable" description="unChecked_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="unCheckable_drawable" value="app:bl_unCheckable_drawable=&quot;$END$&quot;" description="unCheckable_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unEnabled_drawable" value="bl_unEnabled_drawable" description="unEnabled_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="unChecked_drawable" value="app:bl_unChecked_drawable=&quot;$END$&quot;" description="unChecked_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unSelected_drawable" value="bl_unSelected_drawable" description="unSelected_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="unEnabled_drawable" value="app:bl_unEnabled_drawable=&quot;$END$&quot;" description="unEnabled_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unPressed_drawable" value="bl_unPressed_drawable" description="unPressed_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="unSelected_drawable" value="app:bl_unSelected_drawable=&quot;$END$&quot;" description="unSelected_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unFocused_drawable" value="bl_unFocused_drawable" description="unFocused_drawable" toReformat="true" toShortenFQNames="true">
+  <template name="unPressed_drawable" value="app:bl_unPressed_drawable=&quot;$END$&quot;" description="unPressed_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unFocused_hovered" value="bl_unFocused_hovered" description="unFocused_hovered" toReformat="true" toShortenFQNames="true">
+  <template name="unFocused_drawable" value="app:bl_unFocused_drawable=&quot;$END$&quot;" description="unFocused_drawable" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unFocused_activated" value="bl_unFocused_activated" description="unFocused_activated" toReformat="true" toShortenFQNames="true">
+  <template name="unFocused_hovered" value="app:bl_unFocused_hovered=&quot;$END$&quot;" description="unFocused_hovered" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_ripple_enable" value="bl_ripple_enable" description="水波纹效果" toReformat="false" toShortenFQNames="true">
+  <template name="unFocused_activated" value="app:bl_unFocused_activated=&quot;$END$&quot;" description="unFocused_activated" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_ripple_color" value="bl_ripple_color" description="水波纹颜色" toReformat="false" toShortenFQNames="true">
+
+  <template name="ripple_color" value="app:bl_ripple_color=&quot;$END$&quot;" description="水波纹颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checkable_stroke_color" value="bl_checkable_stroke_color" description="边框状态的属性" toReformat="false" toShortenFQNames="true">
+  <template name="stroke_color_checked" value="app:bl_stroke_color_checked=&quot;$END$&quot;" description="边框状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checked_stroke_color" value="bl_checked_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="stroke_color_selected" value="app:bl_stroke_color_selected=&quot;$END$&quot;" description="边框状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_enabled_stroke_color" value="bl_enabled_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="stroke_color_pressed" value="app:bl_stroke_color_pressed=&quot;$END$&quot;" description="边框状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_selected_stroke_color" value="bl_selected_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="stroke_color_focused" value="app:bl_stroke_color_focused=&quot;$END$&quot;" description="边框状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_pressed_stroke_color" value="bl_pressed_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="stroke_color_unEnabled" value="app:bl_stroke_color_unEnabled=&quot;$END$&quot;" description="边框状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_focused_stroke_color" value="bl_focused_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="checked_button_drawable" value="app:bl_checked_button_drawable=&quot;$END$&quot;" description="buttonDrawable属性" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unCheckable_stroke_color" value="bl_unCheckable_stroke_color" description="边框状态的属性" toReformat="false" toShortenFQNames="true">
+  <template name="unChecked_button_drawable" value="app:bl_unChecked_button_drawable=&quot;$END$&quot;" description="buttonDrawable属性" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unChecked_stroke_color" value="bl_unChecked_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="textColor_checked" value="app:bl_textColor_checked=&quot;$END$&quot;" description="checked文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unEnabled_stroke_color" value="bl_unEnabled_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="textColor_enabled" value="app:bl_textColor_enabled=&quot;$END$&quot;" description="enabled文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unSelected_stroke_color" value="bl_unSelected_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="textColor_unEnabled" value="app:bl_textColor_unEnabled=&quot;$END$&quot;" description="unEnabled文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unPressed_stroke_color" value="bl_unPressed_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="textColor_selected" value="app:bl_textColor_selected=&quot;$END$&quot;" description="selected文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unFocused_stroke_color" value="bl_unFocused_stroke_color" description="边框状态属性" toReformat="false" toShortenFQNames="true">
+  <template name="textColor_pressed" value="app:bl_textColor_pressed=&quot;$END$&quot;" description="pressed文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checked_button_drawable" value="bl_checked_button_drawable" description="buttonDrawable属性" toReformat="true" toShortenFQNames="true">
+  <template name="textColor_focused" value="app:bl_textColor_focused=&quot;$END$&quot;" description="focused文字颜色" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unChecked_button_drawable" value="bl_unChecked_button_drawable" description="buttonDrawable属性" toReformat="true" toShortenFQNames="true">
+  <template name="solid_color_checked" value="app:bl_solid_color_checked=&quot;$END$&quot;" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checkable_textColor" value="bl_checkable_textColor" description="checkable文字颜色" toReformat="false" toShortenFQNames="true">
+  <template name="solid_color_unEnabled" value="app:bl_solid_color_unEnabled=&quot;$END$&quot;" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unCheckable_textColor" value="bl_unCheckable_textColor" description="unCheckable文字颜色" toReformat="false" toShortenFQNames="true">
+  <template name="solid_color_selected" value="app:bl_solid_color_selected=&quot;$END$&quot;" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_checked_textColor" value="bl_checked_textColor" description="checked文字颜色" toReformat="false" toShortenFQNames="true">
+  <template name="solid_color_pressed" value="app:bl_solid_color_pressed=&quot;$END$&quot;" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_unChecked_textColor" value="bl_unChecked_textColor" description="unChecked文字颜色" toReformat="false" toShortenFQNames="true">
+  <template name="solid_color_focused" value="app:bl_solid_color_focused=&quot;$END$&quot;" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
-  <template name="bl_enabled_textColor" value="bl_enabled_textColor" description="enabled文字颜色" toReformat="false" toShortenFQNames="true">
+  <template name="position" value="app:bl_position=&quot;$END$&quot;" description="drawable位置" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unEnabled_textColor" value="bl_unEnabled_textColor" description="unEnabled文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_selected_textColor" value="bl_selected_textColor" description="selected文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unSelected_textColor" value="bl_unSelected_textColor" description="unSelected文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_pressed_textColor" value="bl_pressed_textColor" description="pressed文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unPressed_textColor" value="bl_unPressed_textColor" description="unPressed文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_focused_textColor" value="bl_focused_textColor" description="focused文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unFocused_textColor" value="bl_unFocused_textColor" description="unFocused文字颜色" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_checked_solid_color" value="bl_checked_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unChecked_solid_color" value="bl_unChecked_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_checkable_solid_color" value="bl_checkable_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unCheckable_solid_color" value="bl_unCheckable_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_enabled_solid_color" value="bl_enabled_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unEnabled_solid_color" value="bl_unEnabled_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unSelected_solid_color" value="bl_unSelected_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_selected_solid_color" value="bl_selected_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unPressed_solid_color" value="bl_unPressed_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_pressed_solid_color" value="bl_pressed_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_focused_solid_color" value="bl_focused_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_unFocused_solid_color" value="bl_unFocused_solid_color" description="填充颜色状态属性" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
-  <template name="bl_position" value="bl_position" description="drawable位置" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="XML" value="true" />
+      <option name="XML_ATTRIBUTE" value="true" />
     </context>
   </template>
 </templateSet>

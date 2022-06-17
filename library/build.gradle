@@ -1,12 +1,17 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'bintray-release'
-apply plugin: "guru.stefma.bintrayrelease"
+//apply plugin: "guru.stefma.bintrayrelease"
 
+apply plugin: 'kotlin-android' //注释生成SDK
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext.kotlin_version = '1.5.20'
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -25,27 +30,26 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compileOnly 'androidx.appcompat:appcompat:1.1.0-alpha02'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }
 
-version = rootProject.publishVersion
-group = rootProject.groupId
-androidArtifact { // 2
-    artifactId = 'corex'
-}
+//version = rootProject.publishVersion
+//group = rootProject.groupId
+//androidArtifact { // 2
+//    artifactId = 'corex'
+//}
 
-publish {
-    artifactId = 'corex'
-    userOrg = rootProject.userOrg
-//    groupId = rootProject.groupId
-    uploadName = rootProject.uploadName
-//    publishVersion = rootProject.publishVersion
-    desc = rootProject.desc
-    website = rootProject.website
-}
+//publish {
+//    artifactId = 'corex'
+//    userOrg = rootProject.userOrg
+////    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+////    publishVersion = rootProject.publishVersion
+//    desc = rootProject.desc
+//    website = rootProject.website
+//}
 repositories {
     mavenCentral()
 }

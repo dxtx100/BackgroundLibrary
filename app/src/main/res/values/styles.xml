@@ -22,7 +22,6 @@
         <item name="bl_gradient_angle">270</item>
         <item name="bl_gradient_startColor">@android:color/holo_blue_bright</item>
         <item name="bl_gradient_endColor">@android:color/holo_blue_dark</item>
-        <item name="bl_ripple_enable">true</item>
         <item name="bl_ripple_color">@android:color/holo_blue_light</item>
     </style>
 </resources>
